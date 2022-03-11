@@ -3,14 +3,13 @@
 ### components
 
 #### ansible
-** contains the ansible playbooks to setup a jenkins server and k8s cluster **
+*contains the ansible playbooks to setup a jenkins server and k8s cluster*
 
 #### Dockerfile
-** contains the blueprint for the flask application
-**
+*contains the blueprint for the flask application*
 
 #### app.py
-** the flask file to run **
+*the flask file to run*
 
 #### Jenkinsfile
-** contains the pipeline code **
+*contains the pipeline code*

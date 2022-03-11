@@ -5,7 +5,7 @@ pipeline {
         stage("cloning") {
             steps{
                 sh 'git clone https://github.com/Shashwat-05/opslyft-assesment.git'
-                sh 'cd /var/lib/jenkins/workspace/opslyft-assesment/opslyft-assesment'
+                sh 'cd /var/lib/jenkins/workspace/opslyft-assesment_master/opslyft-assesment'
             }
 
         }

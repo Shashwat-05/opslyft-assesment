@@ -4,7 +4,9 @@ pipeline {
     stages{
         stage("cloning") {
             steps{
-                sh 'git pull https://github.com/Shashwat-05/opslyft-assesment.git'
+                sh 'git remote add origin https://github.com/Shashwat-05/opslyft-assesment.git'
+                sh 'git fetch --all'
+                sh 'git reset --hart origin/master'
                 sh 'cd /var/lib/jenkins/workspace/opslyft-assesment_master/opslyft-assesment'
             }
 

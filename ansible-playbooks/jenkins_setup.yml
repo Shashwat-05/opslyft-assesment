@@ -36,6 +36,12 @@
           #    url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
           #      dest: /etc/yum.repos.d/jenkins.repo
 
+    - name: Installing Docker 
+      shell: |
+        yum install -y yum-utils device-mapper-persistent-data lvm2
+        yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+        yum install docker-ce -y --skip-broken --nobest
+  
     - name: creating jenkins repo
       yum_repository:
         name: jenkins
@@ -48,6 +54,7 @@
     - name: installing all required packages now
       yum:
         name:
+          - git
           - python3
           - "java-11-openjdk"
           - jenkins
@@ -87,9 +94,12 @@
 
     - name: starting jenkins server
       service:
-        name: jenkins
+        name: "{{ item }}"
         state: started
         enabled: yes 
+      loop:
+        - jenkins
+        - docker
 
     - name: installing python unit testings
       pip:

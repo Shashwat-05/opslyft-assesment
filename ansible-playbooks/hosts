@@ -1,13 +1,12 @@
 [master]
-local_master 192.168.29.244
-
+local_master ansible_ssh_host=192.168.29.244
 [slaves]
-local_slave1 192.168.29.224
-local_slave2 192.168.29.238
+local_slave1 ansible_ssh_host=192.168.29.224
+local_slave2 ansible_ssh_host=192.168.29.238 
 
 [allnodes:children]
 master
 slaves
 
 [jenkins]
-local_jenkins 192.168.29.28
+local_jenkins ansible_ssh_host=192.168.29.28

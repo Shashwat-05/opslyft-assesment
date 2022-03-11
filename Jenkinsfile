@@ -5,7 +5,7 @@ pipeline {
         stage("cloning") {
             steps{
                 sh 'git fetch --all'
-                sh 'git reset --hart origin/master'
+                sh 'git reset --hard origin/master'
                 sh 'cd /var/lib/jenkins/workspace/opslyft-assesment_master/opslyft-assesment'
             }
 

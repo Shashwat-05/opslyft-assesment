@@ -4,8 +4,8 @@ pipeline {
     stages{
         stage("cloning") {
             steps{
-                git clone 'https://github.com/Shashwat-05/opslyft-assesment.git'
-                cd /var/lib/jenkins/workspace/opslyft-assesment/opslyft-assesment
+                sh 'git clone https://github.com/Shashwat-05/opslyft-assesment.git'
+                sh 'cd /var/lib/jenkins/workspace/opslyft-assesment/opslyft-assesment'
             }
 
         }
@@ -13,9 +13,9 @@ pipeline {
             steps {
             echo "testing the flask application ..."
             echo "linting the flask app ..."
-            pylint app.py
+            sh 'pylint app.py'
             echo "testing the flask appl ..."
-            pytest app.py
+            sh 'pytest app.py'
             }
         }
         stage("build"){

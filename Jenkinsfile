@@ -14,8 +14,8 @@ pipeline {
             echo "testing the flask application ..."
             echo "linting the flask app ..."
             sh 'pylint app.py'
-            echo "testing the flask appl ..."
-            sh 'pytest app.py'
+            // echo "testing the flask appl ..."
+            // sh 'pytest app.py'
             }
         }
         stage("build"){

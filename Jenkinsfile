@@ -21,8 +21,8 @@ pipeline {
         stage("build"){
             steps {
             echo "building the docker image and pushing on dockerhub ..."
-            docker build -t shaswatpp/basic-flask:$BUILD_NUMBER .
-            docker push shaswatpp/basic-flask:$BUILD_NUMBER
+            sh 'docker build -t shashwatpp/basic-flask:$BUILD_NUMBER .'
+            sh 'docker push shashwatpp/basic-flask:$BUILD_NUMBER'
             }
         }
         stage("deploy"){

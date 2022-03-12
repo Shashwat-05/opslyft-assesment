@@ -26,9 +26,8 @@ pipeline {
 
             def customImage = docker.build("shashwatpp/basic-flask:${env.BUILD_ID}")
 
-        /* Push the container to the custom Registry */
             customImage.push()
-            }
+                }
             }
             // steps {
             // echo "building the docker image and pushing on dockerhub ..."
@@ -37,10 +36,11 @@ pipeline {
             // // sh 'docker push shashwatpp/basic-flask:$BUILD_NUMBER'
             // }
         }
+        }
         stage("deploy"){
             steps{
             echo "deploying the application on k8s cluster ..."
             }
         }
     }
-}}
+}

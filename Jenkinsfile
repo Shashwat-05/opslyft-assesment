@@ -19,7 +19,7 @@ pipeline {
             }
         }
         stage("build and push"){
-            script{
+            steps{
 
             docker.withRegistry('https://index.docker.io/v1/', 'dockerid') {
 

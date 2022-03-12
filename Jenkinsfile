@@ -20,6 +20,7 @@ pipeline {
         }
         stage("build and push"){
             steps{
+                script{
 
             docker.withRegistry('https://index.docker.io/v1/', 'dockerid') {
 
@@ -27,6 +28,7 @@ pipeline {
 
         /* Push the container to the custom Registry */
             customImage.push()
+            }
             }
             // steps {
             // echo "building the docker image and pushing on dockerhub ..."

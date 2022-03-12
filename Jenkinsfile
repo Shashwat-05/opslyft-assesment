@@ -14,8 +14,7 @@ pipeline {
             echo "testing the flask application ..."
             echo "linting the flask app ..."
             sh 'pylint app.py'
-            // echo "testing the flask appl ..."
-            // sh 'pytest app.py'
+            
             }
         }
         stage("build and push"){
@@ -36,8 +35,8 @@ pipeline {
             steps{
                 script{
                     withKubeConfig([credentialsId: 'k8sid', serverUrl: 'https://192.168.29.244:6443']) {
-                    sh "kubectl apply -f flask-deploy.yaml"
-                    sh "kubectl apply -f flask-service.yaml"
+                    sh "kubectl apply -f deploy-files/flask-deploy.yaml"
+                    sh "kubectl apply -f deploy-files/flask-service.yaml"
                     sh "kubectl set image deployments/flask-deployment flask-hello=shashwatpp/basic-flask:${env.BUILD_ID}"
                     echo "application running on -> http://192.168.29.244:30036"
                 }

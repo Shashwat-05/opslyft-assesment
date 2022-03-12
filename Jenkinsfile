@@ -39,7 +39,11 @@ pipeline {
         }
         stage("deploy"){
             steps{
-            echo "deploying the application on k8s cluster ..."
+                script{
+                    withKubeConfig([credentialsId: 'k8sid', serverUrl: 'http://192/168.29.244:6443']) {
+                    sh "kubectl run testing${env.BUILD_ID} --image=shashwatpp/basic-flask:${env.BUILD_ID}"
+                }
+            //echo "deploying the application on k8s cluster ..."
             }
         }
     }

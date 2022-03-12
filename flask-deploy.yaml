@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask-hello
-        image: shashwatpp/flask-basic:38
+        image: shashwatpp/basic-flask:38
         ports:
         - containerPort: 5000

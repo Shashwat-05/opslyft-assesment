@@ -40,3 +40,5 @@ Just make sure all the credentials are set eg- DockerHub, k8s config file, GitHu
     - starts the deployment in the k8s multi-node cluster
     - updates the image version and does rollout on triggering 
 
+
+*Walkthrough of the practical - https://drive.google.com/file/d/1wnByMnH5qNaQj2lyHC_u_58Mi9PJ6F2R/view?usp=sharing*

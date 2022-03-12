@@ -43,7 +43,9 @@ pipeline {
                     withKubeConfig([credentialsId: 'k8sid', serverUrl: 'https://192.168.29.244:6443']) {
                     sh "kubectl apply -f flask-deploy.yaml"
                     sh "kubectl apply -f flask-service.yaml"
+                    sh "kubectl set image deployments/flask-deployment flask-hello=shashwatp//basic-flask:${env.BUILD_ID}"
                 }
+                
             //echo "deploying the application on k8s cluster ..."
             }
         }

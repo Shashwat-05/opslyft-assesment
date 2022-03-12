@@ -1,0 +1,2 @@
+- import_playbook: k8s_setup/initial_setup.yml
+- import_playbook: jenkins_setup.yml

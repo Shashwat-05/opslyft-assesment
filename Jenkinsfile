@@ -29,12 +29,7 @@ pipeline {
             customImage.push()
                 }
             }
-            // steps {
-            // echo "building the docker image and pushing on dockerhub ..."
 
-            // // sh 'docker build -t shashwatpp/basic-flask:$BUILD_NUMBER .'
-            // // sh 'docker push shashwatpp/basic-flask:$BUILD_NUMBER'
-            // }
             }
         }
         stage("deploy"){
@@ -47,7 +42,7 @@ pipeline {
                     echo "application running on -> http://192.168.29.244:30036"
                 }
 
-            //echo "deploying the application on k8s cluster ..."
+            
             }
         }
     }

@@ -10,19 +10,20 @@ run - `ansible-playbook initiator.yml`
 #### Dockerfile
 *contains the blueprint for the flask application*
 (change the ENV 'msg' value to update the flask app home page msg )
-run - `docker built -t <username>/<img-name>:<tag-version>`
-      `docker push <username>/<img-name>:<tag-version>`
+1. `docker built -t <username>/<img-name>:<tag-version>`
+2. `docker push <username>/<img-name>:<tag-version>`
 
 #### app.py
 *the flask application code*
-run - `flask run`
-and to test  - `pylint app.py`
-(need to install pylint first - `pip install pylint`)
+1. `flask run`
+2. (need to install pylint first - `pip install pylint`)
+3. and to test  - `pylint app.py`
+
 
 #### deploy-files
 *contains the deployment and service k8s configuration for the application*
-run - `kubectl apply -f deploy-files/flask-deploy.yaml`
-      `kubectl apply -f deploy-files/flask-service.yaml`
+1. `kubectl apply -f deploy-files/flask-deploy.yaml`
+2. `kubectl apply -f deploy-files/flask-service.yaml`
 
 #### Jenkinsfile
 *contains all stages for the multi-branch pipeline*

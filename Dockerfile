@@ -8,6 +8,6 @@ WORKDIR /test
 
 EXPOSE 5000
 
-ENV msg="good morning"
+ENV msg="good evening"
 
 CMD ["flask","run","--host=0.0.0.0"]
